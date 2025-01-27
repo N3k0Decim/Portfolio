@@ -32,7 +32,8 @@ a {
 
 /* Hero Section */
 .hero {
-    background-image: url("../Images/background1.png");
+    background-image: url("./Images/background1.png");
+    background-color: #FFFEF0;
     height: 100vh;
     display: flex;
     flex-direction: column;
