@@ -6,7 +6,7 @@
     color: white;
 }
 
-/* Fading Effect */
+/* Fade-in Effect */
 .fade-in {
     background-image: url("Adventure1.png");
     background-size: cover;
@@ -14,17 +14,16 @@
     background-position: center center;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-end; /* Align everything at the bottom */
+    justify-content: center;
     padding: 3rem;
     color: #fff;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    position: relative;
     opacity: 0;
     animation: fadeIn 1.5s ease-in-out forwards;
 }
 
-/* Fade In Animation */
+/* Fade-in Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -35,7 +34,16 @@
     }
 }
 
-/* Content Section */
+/* Flex Container to Keep Boxes & Image Aligned */
+.bottom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem; /* Space between text and image */
+    width: 100%;
+}
+
+/* Left Side: Text Boxes */
 .content {
     display: flex;
     flex-direction: column;
@@ -68,16 +76,16 @@
     border-radius: 10px;
 }
 
-/* Circular Image */
+/* Right Side: Circular Image */
 .circle-image {
-    position: absolute;
-    bottom: -50px;
-    right: 50px;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
     .circle-image img {
