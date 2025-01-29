@@ -240,3 +240,35 @@ a {
         .contact-info a:hover {
             text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700;
         }
+
+.header {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 2px solid white; /* White bottom border */
+}
+
+.menu nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+    .menu nav ul li {
+        display: inline;
+    }
+
+        .menu nav ul li a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: text-shadow 0.3s ease;
+        }
+
+            .menu nav ul li a:hover {
+                text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700;
+            }
