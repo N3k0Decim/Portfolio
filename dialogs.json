@@ -1,0 +1,48 @@
+{
+    "npc1": {
+        "name": "Stary Mędrzec",
+        "image": "OldMan.png",
+        "dialog": [
+            {
+                "text": "Witaj, podróżniku. Jakie ścieżki doprowadziły cię tutaj?",
+                "choices": [
+                    {
+                        "text": "Szukam wiedzy.",
+                        "next": 1
+                    },
+                    {
+                        "text": "Przemierzam świat.",
+                        "next": 2
+                    }
+                ]
+            },
+            {
+                "text": "Mądry wybór! Wiedza to największy skarb. Czego chcesz się nauczyć?",
+                "choices": [
+                    {
+                        "text": "Programowania.",
+                        "next": 3
+                    },
+                    {
+                        "text": "Sztuki cyfrowej.",
+                        "next": 4
+                    }
+                ]
+            },
+            {
+                "text": "Podróże uczą pokory. Gdzie byłeś wcześniej?",
+                "choices": [
+                    {
+                        "text": "W krainie frontendu.",
+                        "next": 5
+                    },
+                    {
+                        "text": "W jaskini backendu.",
+                        "next": 6
+                    }
+                ]
+            }
+        ]
+    }
+}
+

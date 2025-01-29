@@ -76,7 +76,13 @@
     flex: 1;
     text-align: center;
     border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
 }
+    .sub-box:hover {
+        background-color: #8a6f52;
+        transform: scale(1.05);
+    }
 
 
 /* Right Side: Circular Image */
