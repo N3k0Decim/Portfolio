@@ -33,7 +33,8 @@ a {
 /* Hero Section */
 .hero {
     background-image: url("background2.png");
-    object-fit: contain;
+   background-size: contain;
+   background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     flex-direction: column;
