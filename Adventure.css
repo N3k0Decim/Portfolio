@@ -76,23 +76,6 @@
     border-radius: 10px;
 }
 
-/* Right Side: Circular Image */
-.circle-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-    .circle-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
 /* Right Side: Circular Image */
 .circle-image {
