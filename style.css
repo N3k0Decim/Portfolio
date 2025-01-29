@@ -43,6 +43,55 @@ a {
         opacity: 1;
     }
 }
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 40%;
+}
+
+/* Main Box */
+.main-box {
+    background-color: #5a3e2b; /* Dark Brown */
+    border: 2px solid white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Sub Boxes */
+.sub-boxes {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sub-box {
+    background-color: #7a5a42; /* Lighter Brown */
+    border: 2px solid white;
+    padding: 1rem;
+    flex: 1;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Circular Image */
+.circle-image {
+    position: absolute;
+    bottom: -50px;
+    right: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+}
+
+    .circle-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 /* Hero Section */
 .hero {
     background-image: url("background2.png");
