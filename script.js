@@ -29,7 +29,7 @@ function startLocation(location) {
     npcName.textContent = locationData.name;
 
     // Ukrywanie obrazu NPC
-    npcImage.style.display = "none";
+    document.querySelector(".circle-image").style.display = "none";
 
     // Jeśli lokacja ma przypisane tło, zmienia je dynamicznie
     if (locationData.background) {
@@ -69,7 +69,7 @@ function startDialogue(npcKey) {
     }
 
     // Pokazuje obraz NPC
-    npcImage.style.display = "block";
+    document.querySelector(".circle-image").style.display = "block";
     npcImage.src = npc.image; // Ustawia obraz NPC
     npcName.textContent = npc.name; // Ustawia nazwę NPC
 
