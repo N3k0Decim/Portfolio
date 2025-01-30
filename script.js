@@ -28,10 +28,11 @@ function startLocation(location) {
     // Zmiana nazwy NPC na nazwę lokacji
     npcName.textContent = locationData.name;
 
+    // Ukrywanie obrazu NPC
     removeImage();
 
-    // Ukrywanie obrazu NPC
-    document.querySelector(".circle-image").style.display = "none";
+    
+
 
     // Jeśli lokacja ma przypisane tło, zmienia je dynamicznie
     if (locationData.background) {
