@@ -46,7 +46,7 @@
     width: 100%;
     max-width: 1200px; /* Opcjonalnie ogranicz szerokość */
     margin: 0 auto; /* Wycentruj */
-    gap: 1rem; /* Odstęp między obrazem a tekstem */
+    gap: 20px /* Odstęp między obrazem a tekstem */
 }
 
 /* Left Side: Text Boxes */
