@@ -1,31 +1,127 @@
 {
     "npc1": {
-        "name": "Stary Mędrzec",
+        "name": "Stary Człowiek",
         "image": "OldMan.png",
         "dialog": [
             {
-                "text": "Witaj, podróżniku. Czego szukasz?",
+                "text": "Witaj, podróżniku. Dokąd chcesz się udać?",
                 "choices": [
                     {
-                        "text": "Mądrości.",
+                        "text": "Karczma",
+                        "location": "karczma"
+                    },
+                    {
+                        "text": "Kuźnia",
+                        "location": "kuznia"
+                    },
+                    {
+                        "text": "Rynek",
+                        "location": "rynek"
+                    }
+                ]
+            }
+        ]
+    },
+    "karczma": {
+        "name": "Karczma",
+        "npcs": [ "karczmarz", "żebrak" ],
+        "dialog": [
+            {
+                "text": "Witaj w karczmie! Z kim chcesz rozmawiać?",
+                "choices": [
+                    {
+                        "text": "Karczmarz",
+                        "npc": "karczmarz"
+                    },
+                    {
+                        "text": "Żebrak",
+                        "npc": "żebrak"
+                    },
+                    {
+                        "text": "Wyjdź z karczmy",
+                        "location": "npc1"
+                    }
+                ]
+            }
+        ]
+    },
+    "karczmarz": {
+        "name": "Karczmarz",
+        "image": "TavernKeeper.png",
+        "dialog": [
+            {
+                "text": "Witaj w naszej karczmie! Czego się napijesz?",
+                "choices": [
+                    {
+                        "text": "Piwo",
                         "next": 1
                     },
                     {
-                        "text": "Rzadkich przedmiotów.",
-                        "npc": "npc2"
+                        "text": "Woda",
+                        "next": 2
+                    },
+                    {
+                        "text": "Porozmawiaj z kimś innym",
+                        "location": "karczma"
                     }
                 ]
             },
             {
-                "text": "Mądrość jest bezcenna. Co chcesz wiedzieć?",
+                "text": "Mamy najlepsze piwo w tej okolicy!",
                 "choices": [
                     {
-                        "text": "Opowiedz mi legendę.",
+                        "text": "Wróć",
+                        "location": "karczma"
+                    }
+                ]
+            },
+            {
+                "text": "Masz rację, woda jest zdrowsza!",
+                "choices": [
+                    {
+                        "text": "Wróć",
+                        "location": "karczma"
+                    }
+                ]
+            }
+        ]
+    },
+    "żebrak": {
+        "name": "Żebrak",
+        "image": "Beggar.png",
+        "dialog": [
+            {
+                "text": "Proszę, podróżniku, daj mi kilka monet...",
+                "choices": [
+                    {
+                        "text": "Daj 1 złoto",
+                        "next": 1
+                    },
+                    {
+                        "text": "Nie mam złota",
                         "next": 2
                     },
                     {
-                        "text": "To wystarczy, dziękuję.",
-                        "next": null
+                        "text": "Porozmawiaj z kimś innym",
+                        "location": "karczma"
+                    }
+                ]
+            },
+            {
+                "text": "Dziękuję! Jesteś dobrym człowiekiem.",
+                "choices": [
+                    {
+                        "text": "Wróć",
+                        "location": "karczma"
+                    }
+                ]
+            },
+            {
+                "text": "Szkoda, może następnym razem...",
+                "choices": [
+                    {
+                        "text": "Wróć",
+                        "location": "karczma"
                     }
                 ]
             }

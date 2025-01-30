@@ -24,30 +24,64 @@ function updateDialogue(npc, index) {
     let dialog = npc.dialog[index];
     if (!dialog) return;
 
-    // Aktualizacja tekstu dialogu
     dialogueBox.innerHTML = `<p>${dialog.text}</p>`;
     choicesContainer.innerHTML = "";
 
-    // Tworzenie opcji wyboru w .sub-box zamiast <button>
     dialog.choices.forEach(choice => {
         let div = document.createElement("div");
         div.classList.add("sub-box");
         div.textContent = choice.text;
+        div.setAttribute("tabindex", "0");
+        div.style.cursor = "pointer";
 
-        div.onclick = () => {
-            if (choice.npc) {
-                // Jeśli wybór prowadzi do innego NPC, zmieniamy rozmówcę
-                startDialogue(data[choice.npc]);
-            } else if (choice.next !== null) {
-                // Jeśli istnieje następny indeks, przechodzimy do niego
-                updateDialogue(npc, choice.next);
-            } else {
-                // Jeśli next === null, kończymy rozmowę
-                dialogueBox.innerHTML = "<p>Rozmowa zakończona.</p>";
-                choicesContainer.innerHTML = "";
-            }
+        div.onclick = () => handleChoice(choice, npc);
+        div.onkeydown = (event) => {
+            if (event.key === "Enter") handleChoice(choice, npc);
         };
 
         choicesContainer.appendChild(div);
     });
+}
+
+function handleChoice(choice, npc) {
+    if (choice.npc) {
+        startDialogue(data[choice.npc]); // Rozmowa z innym NPC
+    } else if (choice.next !== null) {
+        updateDialogue(npc, choice.next);
+    } else if (choice.location) {
+        goToLocation(choice.location);
+    } else {
+        dialogueBox.innerHTML = "<p>Rozmowa zakończona.</p>";
+        choicesContainer.innerHTML = "";
+    }
+}
+
+function goToLocation(location) {
+    let locationData = data[location];
+
+    if (locationData.npcs) {
+        // Jeśli lokacja ma wielu NPC, gracz wybiera rozmówcę
+        dialogueBox.innerHTML = `<p>Jesteś w ${locationData.name}. Z kim chcesz rozmawiać?</p>`;
+        choicesContainer.innerHTML = "";
+
+        locationData.npcs.forEach(npcKey => {
+            let npc = data[npcKey];
+            let div = document.createElement("div");
+            div.classList.add("sub-box");
+            div.textContent = npc.name;
+            div.style.cursor = "pointer";
+
+            div.onclick = () => startDialogue(npc);
+            choicesContainer.appendChild(div);
+        });
+
+        let exitDiv = document.createElement("div");
+        exitDiv.classList.add("sub-box");
+        exitDiv.textContent = "Wyjdź";
+        exitDiv.style.cursor = "pointer";
+        exitDiv.onclick = () => startDialogue(data["npc1"]);
+        choicesContainer.appendChild(exitDiv);
+    } else {
+        startDialogue(locationData);
+    }
 }
