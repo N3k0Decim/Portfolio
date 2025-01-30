@@ -127,6 +127,7 @@ function removeImage() {
     }
     // Po usunięciu centrowanie content
     document.querySelector(".bottom-container").style.justifyContent = "center";
+    
 }
 
 // Funkcja dodawania obrazu
@@ -151,4 +152,5 @@ function addImage() {
 
     // Po dodaniu zmień układ
     document.querySelector(".bottom-container").style.justifyContent = "space-between";
+    document.querySelector(".bottom-container").style.gap = "20px";
 }
