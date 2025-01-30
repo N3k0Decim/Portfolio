@@ -41,8 +41,9 @@
 .bottom-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 3rem; /* Space between text and image */
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -53,6 +54,11 @@
     align-items: flex-start;
     align-items: stretch;
     max-width: 50%;
+}
+
+.main-box, .sub-boxes {
+    max-width: 50%; /* Ustaw maksymalną szerokość */
+    box-sizing: border-box; /* Wliczaj padding i border do szerokości */
 }
 
 /* Main Box */
@@ -92,6 +98,7 @@
 
 /* Right Side: Circular Image */
 .circle-image {
+    flex-shrink: 0;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -164,4 +171,19 @@
         }
 .section {
     padding: 4rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .bottom-container {
+        flex-direction: column; /* Ustaw układ pionowy */
+        align-items: center; /* Wyrównaj elementy na środku */
+    }
+
+    .main-box, .sub-boxes {
+        max-width: 90%; /* Rozciągnij szerokość na mniejszych ekranach */
+    }
+
+    .circle-image {
+        margin-top: 1rem; /* Dodaj odstęp między obrazem a tekstem */
+    }
 }
