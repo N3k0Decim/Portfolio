@@ -58,6 +58,16 @@ function startLocation(location) {
             div.onclick = () => startDialogue(npcKey); // Przypisuje akcję kliknięcia do wyboru NPC
             choicesContainer.appendChild(div);
         });
+
+        // Dodanie opcji powrotu, jeśli jest dostępna
+        if (locationData.back) {
+            let backButton = document.createElement("div");
+            backButton.classList.add("sub-box", "back-option");
+            backButton.textContent = "Powrót";
+            backButton.style.cursor = "pointer";
+            backButton.onclick = () => startLocation(locationData.back);
+            choicesContainer.appendChild(backButton);
+        }
     } else {
         startDialogue(location); // Jeśli to pojedynczy NPC, rozpoczyna dialog
     }

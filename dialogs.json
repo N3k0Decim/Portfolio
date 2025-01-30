@@ -25,7 +25,8 @@
     "karczma": {
         "name": "Karczma",
         "background": "tavern.png",
-        "npcs": [ "karczmarz", "zebrak" ]
+        "npcs": [ "karczmarz", "zebrak" ],
+        "back": "npc1"
     },
     "karczmarz": {
         "name": "Karczmarz",
@@ -112,7 +113,8 @@
     "kuznia": {
         "name": "Kuźnia",
         "background": "BlacksmithWorkshop.png",
-        "npcs": [ "kowal" ]
+        "npcs": [ "kowal" ],
+        "back": "npc1"
     },
     "kowal": {
         "name": "Kowal",
@@ -167,7 +169,8 @@
     "rynek": {
         "name": "Rynek",
         "background": "market.jpg",
-        "npcs": [ "kupiec" ]
+        "npcs": [ "kupiec" ],
+        "back": "npc1"
     },
     "kupiec": {
         "name": "Kupiec",
