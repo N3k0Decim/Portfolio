@@ -24,7 +24,7 @@
     },
     "karczma": {
         "name": "Karczma",
-        "background": "tavern.jpg",
+        "background": "tavern.png",
         "npcs": [ "karczmarz", "zebrak" ]
     },
     "karczmarz": {
@@ -111,7 +111,7 @@
     },
     "kuznia": {
         "name": "Kuźnia",
-        "background": "blacksmith.jpg",
+        "background": "BlacksmithWorkshop.png",
         "npcs": [ "kowal" ]
     },
     "kowal": {
