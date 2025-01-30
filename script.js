@@ -28,6 +28,8 @@ function startLocation(location) {
     // Zmiana nazwy NPC na nazwę lokacji
     npcName.textContent = locationData.name;
 
+    removeImage();
+
     // Ukrywanie obrazu NPC
     document.querySelector(".circle-image").style.display = "none";
 
@@ -68,8 +70,10 @@ function startDialogue(npcKey) {
         return;
     }
 
+    addImage();
+
     // Pokazuje obraz NPC
-    document.querySelector(".circle-image").style.display = "block";
+    const npcImage = document.querySelector(".circle-image img");
     npcImage.src = npc.image; // Ustawia obraz NPC
     npcName.textContent = npc.name; // Ustawia nazwę NPC
 
@@ -113,4 +117,37 @@ function handleChoice(choice, npc) {
         dialogueBox.innerHTML = "<p>Rozmowa zakończona.</p>";
         choicesContainer.innerHTML = "";
     }
+}
+// Funkcja usuwania obrazu
+function removeImage() {
+    const circleImage = document.querySelector(".circle-image");
+    if (circleImage) {
+        circleImage.remove(); // Usuwa element
+    }
+    // Po usunięciu centrowanie content
+    document.querySelector(".bottom-container").style.justifyContent = "center";
+}
+
+// Funkcja dodawania obrazu
+function addImage() {
+    const bottomContainer = document.querySelector(".bottom-container");
+
+    // Sprawdź, czy obraz już istnieje (aby uniknąć duplikatów)
+    if (document.querySelector(".circle-image")) return;
+
+    // Stwórz nowy element dla obrazu
+    const newCircleImage = document.createElement("div");
+    newCircleImage.classList.add("circle-image");
+
+    // Dodaj zawartość do elementu (img tag)
+    const img = document.createElement("img");
+    img.src = ""; // Domyślna ścieżka do obrazu, zostanie nadpisana w `startDialogue`
+    img.alt = "NPC Image";
+    newCircleImage.appendChild(img);
+
+    // Dodaj nowy element z powrotem do kontenera
+    bottomContainer.appendChild(newCircleImage);
+
+    // Po dodaniu zmień układ
+    document.querySelector(".bottom-container").style.justifyContent = "space-between";
 }
