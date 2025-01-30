@@ -20,6 +20,12 @@ function startLocation(location) {
     currentLocation = location;
     let locationData = data[location];
 
+    // Zmiana nazwy NPC na nazwę lokacji
+    npcName.textContent = locationData.name;
+
+    // Ukrywanie obrazu NPC
+    npcImage.style.display = "none";
+
     // Jeśli lokacja ma przypisane tło, zmienia je dynamicznie
     if (locationData.background) {
         locationContainer.style.backgroundImage = `url(${locationData.background})`;
