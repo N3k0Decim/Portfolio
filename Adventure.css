@@ -56,11 +56,6 @@
     max-width: 50%;
 }
 
-.main-box, .sub-boxes {
-    max-width: 50%; /* Ustaw maksymalną szerokość */
-    box-sizing: border-box; /* Wliczaj padding i border do szerokości */
-}
-
 /* Main Box */
 .main-box {
     width: 100%;
