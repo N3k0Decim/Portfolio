@@ -57,7 +57,7 @@
     flex: 1; /* Zajmuje tyle miejsca, ile dostępne */
     min-width: 300px; /* Zapewnij minimalną szerokość */
     max-width: 600px; /* Opcjonalne ograniczenie szerokości */
-    margin-left:1rem;
+    margin-left: 10%;
 }
 
 /* Main Box */
@@ -108,7 +108,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem;
+    margin-right: 10%;
 }
 
     .circle-image img {
