@@ -41,37 +41,43 @@
 .bottom-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 3rem; /* Space between text and image */
-    flex-wrap: wrap;
+    justify-content: space-between; /* Obraz i tekst po przeciwnych stronach */
+    flex-wrap: wrap; /* Dla lepszej responsywności */
     width: 100%;
+    max-width: 1200px; /* Opcjonalnie ogranicz szerokość */
+    margin: 0 auto; /* Wycentruj */
+    gap: 3rem; /* Odstęp między obrazem a tekstem */
 }
 
 /* Left Side: Text Boxes */
 .content {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    max-width: 50%;
+    align-items: center; /* Wyśrodkuj treść */
+    flex: 1; /* Zajmuje tyle miejsca, ile dostępne */
+    min-width: 300px; /* Zapewnij minimalną szerokość */
+    max-width: 600px; /* Opcjonalne ograniczenie szerokości */
 }
 
 /* Main Box */
 .main-box {
-    width: 100%;
-    background-color: #5a3e2b; /* Dark Brown */
+    width: 100%; /* Dopasuj szerokość do kontenera */
+    background-color: #5a3e2b; /* Kolor tła */
     border: 2px solid white;
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
+    box-sizing: border-box; /* Upewnij się, że padding nie psuje układu */
 }
 
 /* Sub Boxes */
 .sub-boxes {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
+    justify-content: center; /* Wyśrodkuj przyciski */
+    gap: 1rem; /* Odstęp między przyciskami */
+    width: 100%; /* Dopasuj do szerokości main-box */
     margin-top: 1rem;
+    flex-wrap: wrap; /* Umożliwia łamanie wierszy na mniejszych ekranach */
 }
 
 .sub-box {
@@ -92,7 +98,7 @@
 
 /* Right Side: Circular Image */
 .circle-image {
-    flex-shrink: 0;
+    flex-shrink: 0; /* Zapobiega zmniejszaniu obrazka */
     width: 200px;
     height: 200px;
     border-radius: 50%;
