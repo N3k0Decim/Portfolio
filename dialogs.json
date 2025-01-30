@@ -24,26 +24,8 @@
     },
     "karczma": {
         "name": "Karczma",
-        "npcs": [ "karczmarz", "żebrak" ],
-        "dialog": [
-            {
-                "text": "Witaj w karczmie! Z kim chcesz rozmawiać?",
-                "choices": [
-                    {
-                        "text": "Karczmarz",
-                        "npc": "karczmarz"
-                    },
-                    {
-                        "text": "Żebrak",
-                        "npc": "żebrak"
-                    },
-                    {
-                        "text": "Wyjdź z karczmy",
-                        "location": "npc1"
-                    }
-                ]
-            }
-        ]
+        "background": "tavern.jpg",
+        "npcs": [ "karczmarz", "zebrak" ]
     },
     "karczmarz": {
         "name": "Karczmarz",
@@ -86,7 +68,7 @@
             }
         ]
     },
-    "żebrak": {
+    "zebrak": {
         "name": "Żebrak",
         "image": "Beggar.png",
         "dialog": [
@@ -122,6 +104,107 @@
                     {
                         "text": "Wróć",
                         "location": "karczma"
+                    }
+                ]
+            }
+        ]
+    },
+    "kuznia": {
+        "name": "Kuźnia",
+        "background": "blacksmith.jpg",
+        "npcs": [ "kowal" ]
+    },
+    "kowal": {
+        "name": "Kowal",
+        "image": "Blacksmith.png",
+        "dialog": [
+            {
+                "text": "Witaj w mojej kuźni. Potrzebujesz nowego miecza?",
+                "choices": [
+                    {
+                        "text": "Tak, pokaż mi co masz.",
+                        "next": 1
+                    },
+                    {
+                        "text": "Nie, dziękuję.",
+                        "location": "kuznia"
+                    }
+                ]
+            },
+            {
+                "text": "Oto moje najlepsze ostrza. Które wybierasz?",
+                "choices": [
+                    {
+                        "text": "Miecz rycerski",
+                        "next": 2
+                    },
+                    {
+                        "text": "Topór bojowy",
+                        "next": 3
+                    }
+                ]
+            },
+            {
+                "text": "Świetny wybór! Ten miecz posłuży ci dobrze.",
+                "choices": [
+                    {
+                        "text": "Dziękuję",
+                        "location": "kuznia"
+                    }
+                ]
+            },
+            {
+                "text": "Silny i niezawodny! Niech dobrze ci służy.",
+                "choices": [
+                    {
+                        "text": "Dziękuję",
+                        "location": "kuznia"
+                    }
+                ]
+            }
+        ]
+    },
+    "rynek": {
+        "name": "Rynek",
+        "background": "market.jpg",
+        "npcs": [ "kupiec" ]
+    },
+    "kupiec": {
+        "name": "Kupiec",
+        "image": "Merchant.png",
+        "dialog": [
+            {
+                "text": "Witaj, podróżniku! Mam najlepsze towary w mieście.",
+                "choices": [
+                    {
+                        "text": "Pokaż mi swoje towary.",
+                        "next": 1
+                    },
+                    {
+                        "text": "Nie jestem zainteresowany.",
+                        "location": "rynek"
+                    }
+                ]
+            },
+            {
+                "text": "Oto moje towary. Coś ci się podoba?",
+                "choices": [
+                    {
+                        "text": "Tak, kupuję.",
+                        "next": 2
+                    },
+                    {
+                        "text": "Nie, dziękuję.",
+                        "location": "rynek"
+                    }
+                ]
+            },
+            {
+                "text": "Dziękuję za zakup!",
+                "choices": [
+                    {
+                        "text": "Do widzenia",
+                        "location": "rynek"
                     }
                 ]
             }
