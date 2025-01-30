@@ -41,7 +41,7 @@
 .bottom-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 3rem; /* Space between text and image */
     flex-wrap: wrap;
     width: 100%;
