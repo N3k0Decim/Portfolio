@@ -20,6 +20,11 @@ function startLocation(location) {
     currentLocation = location;
     let locationData = data[location];
 
+    if (!locationData) {
+        console.error(`Lokacja "${location}" nie istnieje.`);
+        return;
+    }
+
     // Zmiana nazwy NPC na nazwę lokacji
     npcName.textContent = locationData.name;
 
@@ -29,6 +34,8 @@ function startLocation(location) {
     // Jeśli lokacja ma przypisane tło, zmienia je dynamicznie
     if (locationData.background) {
         locationContainer.style.backgroundImage = `url(${locationData.background})`;
+    } else {
+        locationContainer.style.backgroundImage = ""; // Resetowanie tła, jeśli brak
     }
 
     // Jeśli lokacja zawiera NPC, pozwala wybrać rozmówcę
@@ -38,6 +45,8 @@ function startLocation(location) {
 
         locationData.npcs.forEach(npcKey => {
             let npc = data[npcKey];
+            if (!npc) return;
+
             let div = document.createElement("div");
             div.classList.add("sub-box");
             div.textContent = npc.name;
@@ -54,10 +63,16 @@ function startLocation(location) {
 // Funkcja rozpoczynająca dialog z wybranym NPC
 function startDialogue(npcKey) {
     let npc = data[npcKey];
-    if (!npc) return;
+    if (!npc) {
+        console.error(`NPC "${npcKey}" nie istnieje.`);
+        return;
+    }
 
+    // Pokazuje obraz NPC
+    npcImage.style.display = "block";
     npcImage.src = npc.image; // Ustawia obraz NPC
     npcName.textContent = npc.name; // Ustawia nazwę NPC
+
     updateDialogue(npc, 0); // Wyświetla pierwszy dialog NPC
 }
 
